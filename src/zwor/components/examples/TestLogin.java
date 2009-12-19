@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
+import java.lang.Runtime;
 
 public class TestLogin {
 
@@ -22,6 +23,7 @@ public class TestLogin {
 		String auth_url = session.getAuthenticationUrl(parameters);
 		session.getAssociationKey(parameters.endpoint);
 		System.out.println(auth_url);
+                Runtime rt = Runtime.getRuntime().exec("firefox "+auth_url);
 		String ret_url = "";
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		try{
